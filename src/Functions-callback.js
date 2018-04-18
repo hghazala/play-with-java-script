@@ -1,4 +1,4 @@
-let things = ["toto", "tata", "titi"];
+const things = ["toto", "tata", "titi"];
 
 /**********example of synchrounous callback**********/
 let functionThatCanSalute = function (saluteDestination, some_function) {
@@ -24,17 +24,3 @@ const getPersonsBis = (callback) => {
 getPersonsBis(function (users) {
     console.log("things after callback : ", users);
 });
-
-/**********example of asynchrounous with promise**********/
-const promessPersons = new Promise(
-    (resolve, reject) => {
-        setTimeout(function(err) {
-            if(err) {
-                reject('Error is occured');
-                return;
-            }
-            resolve(things);
-        }, 2000)
-    }
-);
-promessPersons.then(things => console.log("promised things : ", things));
