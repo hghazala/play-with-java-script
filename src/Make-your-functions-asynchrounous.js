@@ -28,8 +28,8 @@ getDataPromesse = async function () {
 
 getDataPromesse().then(response => console.log(response));
 
-/****************************les couroutines******************************/
-let multipleOf = function(param, seil) {
+/****************************project Euler (pb 1)******************************/
+let multipleOf = function (param, seil) {
     return [...Array(seil).keys()].map(number => {
         return (number * param);
     }).filter(result => result < seil);
