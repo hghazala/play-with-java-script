@@ -26,7 +26,22 @@ getDataPromesse = async function () {
     return await loadData();
 };
 
-console.log("resolve promise due to async await : ");
 getDataPromesse().then(response => console.log(response));
 
 /****************************les couroutines******************************/
+let multipleOf = function(param, seil) {
+    return [...Array(seil).keys()].map(number => {
+        return (number * param);
+    }).filter(result => result < seil);
+};
+
+let sum = function () {
+    let sum = 0;
+    for (let arg of arguments) {
+        sum += arg;
+    }
+    return sum;
+};
+let res = new Set(multipleOf(3, 1000).concat(multipleOf(5, 1000)));
+
+console.log(sum.apply(this, Array.from(res)));
